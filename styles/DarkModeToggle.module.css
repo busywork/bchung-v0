@@ -1,0 +1,28 @@
+.dark-mode-toggle {
+  display: flex;
+  margin: 0 auto;
+}
+
+.dark-mode-toggle button {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  color: #ffe600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dark-mode-toggle button:last-child {
+  color: #666;
+}
+
+.dark-mode-toggle button:focus {
+  outline: none;
+}
+
+.toggle-control {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
