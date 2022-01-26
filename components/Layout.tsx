@@ -1,10 +1,8 @@
 import React from 'react';
-import styles from '../styles/Layout.module.css';
 
 import Meta from '../components/Meta';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
-
-import DarkModeToggle from '../components/DarkModeToggle';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,15 +12,13 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Meta />
-      <div className={`${styles.container} bg-white dark:bg-gray-800 dark:text-gray-200`}>
-        <div className="flex justify-end">
-          <div>
-            <DarkModeToggle />
-          </div>
-        </div>
-        <main className={styles.main}>{children}</main>
+      <div>
+        <Header />
+        <main className="flex flex-col justify-center items-center min-h-screen p-4">
+          {children}
+        </main>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };
