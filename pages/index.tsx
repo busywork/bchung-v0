@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
     <>
-      <h1 className={styles.title}>{`bchung => dev`}</h1>
-      <p className={styles.description}>{`work in progress..`}</p>
+      <h1 className="text-4xl m-0">{`bchung => dev`}</h1>
+      <p className="text-2xl m-0">{`in progress..`}</p>
     </>
   );
 };
