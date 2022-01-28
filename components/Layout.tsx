@@ -14,9 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Meta />
       <div>
         <Header />
-        <main className="flex flex-col justify-center items-center min-h-screen p-4">
-          {children}
-        </main>
+        <main className="flex flex-col justify-center items-center p-4">{children}</main>
         <Footer />
       </div>
     </>
