@@ -1,17 +1,21 @@
 import React from 'react';
 
+import Heading from './Heading';
 import ProjectCard from './ProjectCard';
 import { ProjectFrontmatter } from '../types/frontmatter';
 
 type ProjectsProps = {
   projects: ProjectFrontmatter[];
-  className?: string;
 } & React.ComponentPropsWithoutRef<'section'>;
 
 const Projects = ({ projects }: ProjectsProps) => {
   return (
     <section id="projects" className="flex flex-col justify-center items-center">
-      <ul className="flex flex-row flex-wrap justify-center items-center">
+      <div className="flex flex-col">
+        <span className="-mb-1">noteworthy</span>
+        <Heading className={'text-2xl numbered-heading'}>Projects</Heading>
+      </div>
+      <ul className="flex flex-row flex-wrap justify-center">
         {projects.map(project => (
           <ProjectCard key={project.slug} project={project} />
         ))}
