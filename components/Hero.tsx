@@ -1,11 +1,17 @@
-import Gradient from '../components/Gradient';
+import CloudinaryImage from './CloudinaryImage';
+import Gradient from './Gradient';
 
 const Hero = () => {
   return (
-    <section className="flex flex-col justify-center items-start min-h-screen">
-      <h2 className="text-xl">Hi! My name is</h2>
-      <Gradient className="text-5xl">Brian.</Gradient>
-      <h2 className="text-xl">I build things for the web.</h2>
+    <section className="flex flex-wrap justify-center content-center items-center h-[calc(100vh-3.25em)]">
+      <div>
+        <CloudinaryImage height={300} width={300} publicId={'circle_avatar'} alt={'avatar'} />
+      </div>
+      <div className="flex flex-col justify-center items-start">
+        <h2 className="text-xl">Hi! My name is</h2>
+        <Gradient className="text-6xl">Brian.</Gradient>
+        <h2 className="text-xl">I build things for the web.</h2>
+      </div>
     </section>
   );
 };
