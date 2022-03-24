@@ -21,3 +21,5 @@ export type SnippetFrontmatter = {
   tech: string;
   github?: string;
 };
+
+export type Frontmatter = ProjectFrontmatter | SnippetFrontmatter;

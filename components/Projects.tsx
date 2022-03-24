@@ -2,6 +2,7 @@ import React from 'react';
 
 import Heading from './Heading';
 import ProjectCard from './ProjectCard';
+
 import { ProjectFrontmatter } from '../types/frontmatter';
 
 type ProjectsProps = {
@@ -23,7 +24,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           <ul>
             <ProjectCard project={projects[0]} className={'absolute my-0 z-10'} />
             <ProjectCard
-              project={projects[1]}
+              project={projects[0]}
               className={
                 'transform-gpu translate-x-0 lg:translate-x-[25%] lg:rotate-3 xl:rotate-12'
               }

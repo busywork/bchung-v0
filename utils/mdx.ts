@@ -2,13 +2,13 @@ import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
-import { ContentType, SelectFrontmatter } from '../types/frontmatter';
+import { ContentType, Frontmatter, SelectFrontmatter } from '../types/frontmatter';
 
 export const getFiles = (type: ContentType) => {
   return readdirSync(join(process.cwd(), 'contents', type));
 };
 
-export const getFilesFrontmatter = <T extends ContentType>(type: T) => {
+export const getAllFrontmatter = <T extends ContentType>(type: T) => {
   const files = readdirSync(join(process.cwd(), 'contents', type));
 
   return files.reduce((allData: Array<SelectFrontmatter<T>>, file: string) => {
@@ -24,3 +24,6 @@ export const getFilesFrontmatter = <T extends ContentType>(type: T) => {
     ];
   }, []);
 };
+
+export const getFeaturedFrontmatter = <T extends Frontmatter>(data: Array<T>, slugs: string[]) =>
+  slugs.map(slug => data.find(content => content.slug === slug) as T);
