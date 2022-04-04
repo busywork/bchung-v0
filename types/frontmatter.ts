@@ -14,6 +14,11 @@ export type ProjectFrontmatter = {
   github?: string;
 };
 
+export type ProjectType = {
+  code: string;
+  frontmatter: ProjectFrontmatter;
+};
+
 export type SnippetFrontmatter = {
   slug: string;
   title: string;
