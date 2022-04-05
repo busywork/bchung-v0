@@ -27,4 +27,9 @@ export type SnippetFrontmatter = {
   github?: string;
 };
 
+export type SnippetType = {
+  code: string;
+  frontmatter: SnippetFrontmatter;
+};
+
 export type Frontmatter = ProjectFrontmatter | SnippetFrontmatter;
