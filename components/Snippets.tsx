@@ -11,7 +11,7 @@ type SnippetsProps = {
 const Snippets = ({ snippets }: SnippetsProps) => {
   return (
     <section id="snippets" className="flex flex-col justify-center items-center">
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-16">
         <span className="-mb-1">collection of code</span>
         <Heading className={'text-2xl numbered-heading'}>Snippets</Heading>
       </div>

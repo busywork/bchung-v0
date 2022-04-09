@@ -3,7 +3,10 @@ import Gradient from './Gradient';
 
 const Hero = () => {
   return (
-    <section className="flex flex-wrap justify-center content-center items-center h-[calc(100vh-3.25em)]">
+    <section
+      id="hero"
+      className="flex flex-wrap justify-center content-center items-center h-[calc(100vh-2.75em)]"
+    >
       <div>
         <CloudinaryImage height={300} width={300} publicId={'circle_avatar'} alt={'avatar'} />
       </div>

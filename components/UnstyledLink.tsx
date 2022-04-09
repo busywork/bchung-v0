@@ -5,12 +5,13 @@ type UnstyledLinkProps = {
   children: React.ReactNode;
   href: string;
   className?: string;
+  onClick?: () => void;
 } & LinkProps;
 
-const UnstyledLink = ({ children, href, className, ...props }: UnstyledLinkProps) => {
+const UnstyledLink = ({ children, href, className, onClick, ...props }: UnstyledLinkProps) => {
   return (
     <Link href={href}>
-      <a className={className} {...props}>
+      <a className={className} onClick={onClick} {...props}>
         {children}
       </a>
     </Link>

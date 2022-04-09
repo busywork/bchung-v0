@@ -12,7 +12,7 @@ type ProjectsProps = {
 const Projects = ({ projects }: ProjectsProps) => {
   return (
     <section id="projects" className="flex flex-col justify-center items-center">
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-16">
         <span className="-mb-1">noteworthy</span>
         <Heading className={'text-2xl numbered-heading'}>Projects</Heading>
       </div>
