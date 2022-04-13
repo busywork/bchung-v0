@@ -14,7 +14,9 @@ const Projects = ({ projects }: ProjectsProps) => {
     <section id="projects" className="flex flex-col justify-center items-center">
       <div className="flex flex-col mt-16">
         <span className="-mb-1">noteworthy</span>
-        <Heading className={'text-2xl numbered-heading'}>Projects</Heading>
+        <Heading as={'h2'} className={'text-2xl numbered-heading'}>
+          Projects
+        </Heading>
       </div>
       <ul className="flex flex-row flex-wrap justify-center">
         {projects.map(project => (

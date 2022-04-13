@@ -13,7 +13,9 @@ const Snippets = ({ snippets }: SnippetsProps) => {
     <section id="snippets" className="flex flex-col justify-center items-center">
       <div className="flex flex-col mt-16">
         <span className="-mb-1">collection of code</span>
-        <Heading className={'text-2xl numbered-heading'}>Snippets</Heading>
+        <Heading as={'h2'} className={'text-2xl numbered-heading'}>
+          Snippets
+        </Heading>
       </div>
       <ul className="flex flex-row flex-wrap justify-center">
         {snippets.map(snippet => (
