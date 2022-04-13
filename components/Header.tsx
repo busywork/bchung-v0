@@ -23,9 +23,9 @@ const Header = () => {
       className={'sticky top-0 transition-shadow z-50 ' + (navTop ? 'shadow-none' : 'shadow-2xl')}
     >
       <nav className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 dark:from-pink-300 dark:via-purple-300 dark:to-indigo-400">
-        <div className="container flex items-center justify-between mx-auto">
+        <div className="container flex items-center justify-between mx-auto max-w-7xl">
           <button
-            className="px-4 py-2 outline-none focus:outline-none text-white text-4xl sm:hidden"
+            className="px-4 py-1 outline-none focus:outline-none text-white text-4xl sm:hidden"
             type="button"
             onClick={() => setNavOpen(!navOpen)}
           >
@@ -71,7 +71,7 @@ const Header = () => {
 export default Header;
 
 const links = [
-  { href: '/#hero', label: 'ᗺ' },
+  { href: '/', label: 'ᗺ' },
   { href: '/#projects', label: 'Projects' },
   { href: '/#snippets', label: 'Snippets' },
 ];
