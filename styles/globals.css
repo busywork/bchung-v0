@@ -48,3 +48,14 @@ a {
   margin-left: 0.25rem;
   background-color: #818181;
 }
+
+.offset {
+  margin-bottom: 1rem;
+}
+
+.offset:before {
+  display: block;
+  content: ' ';
+  height: 3rem;
+  visibility: hidden;
+}
