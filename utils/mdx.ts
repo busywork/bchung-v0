@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { bundleMDX } from 'mdx-bundler';
+import remarkGfm from 'remark-gfm';
 
 import { ContentType, Frontmatter, SelectFrontmatter } from '../types/frontmatter';
 
@@ -20,7 +21,14 @@ export const getFileData = async (type: ContentType, slug: string) => {
       ? join(process.cwd(), 'node_modules', 'esbuild', 'esbuild.exe')
       : join(process.cwd(), 'node_modules', 'esbuild', 'bin', 'esbuild');
 
-  const { code, frontmatter } = await bundleMDX({ source });
+  const { code, frontmatter } = await bundleMDX({
+    source,
+    xdmOptions(options) {
+      options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
+      options.rehypePlugins = [...(options?.rehypePlugins ?? [])];
+      return options;
+    },
+  });
 
   return { code, frontmatter };
 };
