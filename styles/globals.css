@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  counter-reset: section;
 }
 
 a {
@@ -17,4 +18,44 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.numbered-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.numbered-heading::before {
+  position: relative;
+  bottom: 0.25rem;
+  counter-increment: section;
+  content: '0' counter(section) '.';
+  margin-right: 0.25rem;
+  font-size: 1rem;
+  color: #818181;
+}
+
+.numbered-heading::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 4rem;
+  height: 0.125rem;
+  margin-left: 0.25rem;
+  background-color: #818181;
+}
+
+.offset {
+  margin-bottom: 1rem;
+}
+
+.offset:before {
+  display: block;
+  content: ' ';
+  height: 3rem;
+  visibility: hidden;
 }

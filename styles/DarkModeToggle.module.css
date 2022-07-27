@@ -7,13 +7,13 @@
   font-size: 1.2em;
   background: none;
   border: none;
-  color: #ffe600;
+  color: #fff;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .dark-mode-toggle button:last-child {
-  color: #666;
+  color: #fff;
 }
 
 .dark-mode-toggle button:focus {
