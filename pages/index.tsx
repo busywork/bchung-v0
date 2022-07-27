@@ -22,12 +22,8 @@ export const getStaticProps = () => {
   const projectsFrontmatter = getAllFrontmatter('projects');
   const snippetsFrontmatter = getAllFrontmatter('snippets');
 
-  const projectsData = getFeaturedFrontmatter(projectsFrontmatter, ['project_0', 'project_1']);
-  const snippetsData = getFeaturedFrontmatter(snippetsFrontmatter, [
-    'snippet_0',
-    'snippet_1',
-    'snippet_2',
-  ]);
+  const projectsData = getFeaturedFrontmatter(projectsFrontmatter, ['barometric', 'crud_academy']);
+  const snippetsData = getFeaturedFrontmatter(snippetsFrontmatter, ['js_algos']);
 
   return {
     props: { projectsData, snippetsData },
