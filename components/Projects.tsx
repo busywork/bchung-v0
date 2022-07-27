@@ -22,7 +22,7 @@ const Projects = ({ projects }: ProjectsProps) => {
         {projects.map(project => (
           <ProjectCard key={project.slug} project={project} />
         ))}
-        <li>
+        {/* <li>
           <ul>
             <ProjectCard project={projects[0]} className={'absolute my-0 z-10'} />
             <ProjectCard
@@ -32,7 +32,7 @@ const Projects = ({ projects }: ProjectsProps) => {
               }
             />
           </ul>
-        </li>
+        </li> */}
       </ul>
     </section>
   );

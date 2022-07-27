@@ -1,15 +1,23 @@
 import React from 'react';
 import {
+  SiBootstrap,
+  SiExpress,
   SiFirebase,
   SiGit,
+  SiGithub,
   SiJavascript,
+  SiJest,
   SiMarkdown,
   SiNextdotjs,
   SiNodedotjs,
+  SiPostgresql,
   SiReact,
   SiRedux,
+  SiSequelize,
+  SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
+  SiWebpack,
 } from 'react-icons/si';
 
 type TechIconsProps = {
@@ -31,7 +39,7 @@ const TechIcons = ({ tech, className = '' }: TechIconsProps) => {
         return (
           <li
             key={techItem.name}
-            className="inline-block bg-gray-200 text-black text-xl rounded px-1 py-1 mr-2 mb-2"
+            className="inline-block bg-gray-200 text-black text-xl rounded p-1 mr-2"
           >
             <techItem.icon />
           </li>
@@ -44,6 +52,14 @@ const TechIcons = ({ tech, className = '' }: TechIconsProps) => {
 export default TechIcons;
 
 const techList = {
+  bootstrap: {
+    name: 'Bootstrap',
+    icon: SiBootstrap,
+  },
+  express: {
+    name: 'Express',
+    icon: SiExpress,
+  },
   firebase: {
     name: 'Firebase',
     icon: SiFirebase,
@@ -52,9 +68,17 @@ const techList = {
     name: 'Git',
     icon: SiGit,
   },
+  github: {
+    name: 'GitHub',
+    icon: SiGithub,
+  },
   javascript: {
     name: 'JavaScript',
     icon: SiJavascript,
+  },
+  jest: {
+    name: 'Jest',
+    icon: SiJest,
   },
   mdx: {
     name: 'MDX',
@@ -68,6 +92,10 @@ const techList = {
     name: 'Node.js',
     icon: SiNodedotjs,
   },
+  postgres: {
+    name: 'PostgreSQL',
+    icon: SiPostgresql,
+  },
   react: {
     name: 'React',
     icon: SiReact,
@@ -76,6 +104,14 @@ const techList = {
     name: 'Redux',
     icon: SiRedux,
   },
+  sequelize: {
+    name: 'Sequelize',
+    icon: SiSequelize,
+  },
+  styledcomponents: {
+    name: 'Styled-Components',
+    icon: SiStyledcomponents,
+  },
   tailwindcss: {
     name: 'Tailwind CSS',
     icon: SiTailwindcss,
@@ -83,5 +119,9 @@ const techList = {
   typescript: {
     name: 'TypeScript',
     icon: SiTypescript,
+  },
+  webpack: {
+    name: 'Webpack',
+    icon: SiWebpack,
   },
 };
