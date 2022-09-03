@@ -6,3 +6,101 @@ banner: 'barometric'
 github: 'https://github.com/busywork/barometric'
 link: 'https://barometric.io/'
 ---
+
+## Overview
+
+This project integrates hyperlocal weather data found on Dark Sky into a web application.
+
+<br />
+
+On the initial load, the application will attempt to request geolocation information. End users will
+also have the option to enter the desired location (e.g. city or ZIP code) to retrieve current, hourly,
+and daily weather forecasts.
+
+## Tech Stack
+
+To keep configuration simple, this application was created with the create-react-app tool. This tool
+generates a new React project using a pre-configured webpack build for development, removing the need
+to configure and maintain complex build pipelines. React libraries, like react-bootstrap and styled-components,
+are also incorporated to manage styling. For example, this web application is deployed through Firebase
+Hosting.
+
+## Highlights
+
+### Firebase
+
+Firebase is an application development platform that provides developers with a suite of tools and services
+that help them develop quality apps and grow their user base. The platform allows developers to focus
+on the application experience itself by offering services such as user authentication, messaging, real-time
+database, cloud functions, and hosting. This project utilizes cloud functions to handle weather data
+requests and is hosted through Firebase Hosting.
+
+<br />
+
+Cloud Functions for Firebase is a service that integrates back-end code written in JavaScript to other
+Firebase services and runs on Google's Cloud infrastructure, making it serverless. The back-end code
+can be set up to execute directly through HTTP requests or events triggered by another Firebase service.
+This application calls the Dark Sky API directly via a cloud function triggered by an HTTP request.
+
+<br />
+
+```
+exports.darksky = functions.https.onRequest((req, res) => {
+  return axios
+    .get(`${url}${req.query.lat},${req.query.lng}?exclude=minutely`)
+    .then(response => res.send(response.data))
+    .catch(err =>
+      res.status(500).json({
+        error: err,
+      })
+    );
+});
+```
+
+<br />
+
+Firebase Hosting integrates Cloud Functions and other serverless services to offer a fully managed, autoscaling,
+and secure environment. It is also great at delivering static assets, such as HTML, CSS, JS, etc., through
+a global content delivery network (CDN).
+
+### Styled-Components
+
+There are many approaches to styling components of a React application. Common solutions include CSS
+modules (CSS-in-CSS), utility-first CSS libraries (such as Tailwind CSS), and CSS-in-JS, where JavaScript
+is used to apply styles.
+
+<br />
+
+Styled-components is a library built for React that defines itself as a CSS-in-JS tool that enables developers
+to create components and attach various styles to them using ES6-tagged template literals. This means
+that CSS selectors are scoped only to their components, which makes them easier to locate and edit.
+
+<br />
+Styled-components support theming through the use of a wrapper component called `<ThemeProvider>`. The component
+takes in theme properties and passes it to all of its child components via the context API. For example, this
+project enables light vs. dark mode viewing via the use of theming in styled-components.
+
+<br />
+
+```
+const darkMode = useDarkMode();
+const mode = !darkMode.value ? theme.light : theme.dark;
+
+<ThemeProvider theme={mode}>
+  <Components />
+</ThemeProvider>
+```
+
+## Takeaways
+
+This was my first project using the create-react-app tool, and I was pleasantly surprised at how effortless
+it was to make the application work. The create-react-app tool allowed me to jump straight into coding
+instead of spending time configuring webpack and other build tools.
+
+<br />
+
+Firebase offers developers the building blocks they need to build a full-stack application and the available
+documentation makes the platform a breeze to work with. I initially ran into some hiccups when setting
+up Cloud Functions by Firebase, but once it was properly set up and deployed, the service proved to be
+fast and reliable, with very little maintenance required. I recommend using this platform for quick prototyping
+or building out microservices.

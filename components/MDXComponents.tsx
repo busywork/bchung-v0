@@ -5,8 +5,8 @@ import Heading from './Heading';
  */
 
 const MDXComponents = {
-  h2: props => <Heading as={'h2'} className={'offset text-xl'} {...props} />,
-  h3: props => <Heading as={'h3'} className={'offset text-xl'} {...props} />,
+  h2: props => <Heading as={'h2'} className={'offset text-2xl'} {...props} />,
+  h3: props => <Heading as={'h3'} className={'offset text-md'} {...props} />,
 };
 
 export default MDXComponents;
