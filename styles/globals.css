@@ -29,11 +29,6 @@ pre {
   word-break: break-all;
 }
 
-th,
-td {
-  padding: 0.25em;
-}
-
 .numbered-heading {
   display: flex;
   justify-content: center;
