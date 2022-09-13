@@ -50,7 +50,7 @@ const ProjectCard = ({ project, className = '' }: ProjectCardProps) => {
           </div>
         </div>
       </div>
-      <div className="px-8">
+      <div className="px-4">
         <p>{project.description}</p>
       </div>
       <div className="p-4">
