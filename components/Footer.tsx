@@ -32,7 +32,7 @@ const Footer = () => {
     <footer className="flex flex-col justify-center items-center p-4">
       <div className="flex flex-row justify-center items-center text-xl pb-2 border-b">
         {socialList.map(social => (
-          <UnstyledLink key={social.name} href={social.href}>
+          <UnstyledLink key={social.name} href={social.href} openNew={true}>
             <social.icon className="mx-4" />
           </UnstyledLink>
         ))}
@@ -59,16 +59,16 @@ const socialList = [
   {
     name: 'GitHub',
     icon: SiGithub,
-    href: 'https://github.com',
+    href: 'https://github.com/busywork',
   },
   {
     name: 'LinkedIn',
     icon: SiLinkedin,
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/brichung',
   },
   {
     name: 'Twitter',
     icon: SiTwitter,
-    href: 'https://twitter.com',
+    href: 'https://twitter.com/bsywrk',
   },
 ];
