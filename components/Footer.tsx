@@ -40,15 +40,13 @@ const Footer = () => {
       <div className="flex flex-row justify-center items-center">
         <span className="mx-4">{gitStats.stargazers_count}</span>
         <GoStar />
-        <GoOctoface className="mx-4" />
+        <UnstyledLink href={'https://github.com/busywork/bchung-v0'} openNew={true}>
+          <GoOctoface className="mx-4" />
+        </UnstyledLink>
         <GoRepoForked />
         <span className="mx-4">{gitStats.forks_count}</span>
       </div>
-      <div>
-        <UnstyledLink href={'https://api.github.com/repos/busywork/bchung-v0'}>
-          &copy; {new Date().getFullYear()} BRIAN CHUNG
-        </UnstyledLink>
-      </div>
+      <div>&copy; {new Date().getFullYear()} BRIAN CHUNG</div>
     </footer>
   );
 };
