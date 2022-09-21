@@ -6,3 +6,109 @@ banner: 'crud_academy'
 github: 'https://github.com/busywork/crud-academy'
 link: 'https://crud-academy.herokuapp.com/'
 ---
+
+## Overview
+
+This project creates a CRUD (CREATE, READ, UPDATE, DELETE) application with a relational database using
+Express to expose data through a REST API. The front-end utilizes React and Redux to manage the global
+state that is filled by the API.
+
+<br />
+
+This application presents school records where users can add, edit, and delete entries through a simple interface.
+
+## Tech Stack
+
+This application was built from scratch, without the use of a boilerplate or scaffolding, to help me
+get a deeper understanding of how each piece of a full stack application works together. The backend
+server runs on Node.js and is written in Express. The data is stored in a PostgreSQL database and managed
+with Sequelize before being served to the React and Redux built frontend. For demonstration purposes,
+this web application is deployed and hosted through Heroku.
+
+## Highlights
+
+### REST API
+
+To keep this application simple, I created a school directory consisting of campuses and students. Models
+for the two are defined in the `server/db/models` folder with a one-to-many relationship established. After
+connecting the database to the server, routes and endpoints created in Express form a REST API.
+
+<br />
+
+A REST API is an application program interface that uses HTTP request methods as a form of network
+communication between applications. I've learned that it's not a protocol like other web services; instead,
+it is a set of architectural principles and standards.
+
+<br />
+
+In this application, CRUD operations can be applied to campus and student records through endpoints that
+are located in the `server/api` directory. The following table provides an overview of the REST API endpoints
+that will be exported.
+
+<br />
+
+| METHOD | URL          | ACTION                 |
+| ------ | ------------ | ---------------------- |
+| GET    | campuses     | Get all campuses       |
+| POST   | campuses     | Create new campus      |
+| PUT    | campuses/:id | Update campus by `id`  |
+| DELETE | campuses/:id | Delete campus by `id`  |
+| GET    | students     | Get all students       |
+| POST   | students     | Create new student     |
+| PUT    | students/:id | Update student by `id` |
+| DELETE | students/:id | Delete student by `id` |
+
+### REACT + REDUX
+
+There are many tools built into the React library for state management and they work well for simple
+applications. However, things get trickier once complexity increases and the state is shared across multiple
+components globally. Fortunately, there are proven state management libraries, like Redux, available.
+
+<br />
+
+Redux simplifies state management with a centralized data store that persists across routes and components.
+For this application, the store contains a plain JavaScript object with slices of state data for campuses,
+students, and errors. Each slice is supported by action creators that dispatch payloads of data from
+components to a reducer.
+
+<br />
+
+```
+export const createStudent = student => dispatch =>
+  axios
+    .post('/api/students', student)
+    .then(res => res.data)
+    .then(student => dispatch({ type: CREATE_STUDENT, student }));
+```
+
+<br />
+
+Reducers are functions that return a new updated state based on the current state and an action object.
+Instead of mutating the previous state, reducers must return a new state object.
+
+<br />
+
+```
+export default (state = [], action) => {
+  switch (action.type) {
+    case CREATE_STUDENT:
+      return [...state, action.student];
+    default:
+      return state;
+  }
+```
+
+## Takeaways
+
+The setup and configuration of the development environment from scratch proved to be challenging. As
+I began installing packages and planning the file structure, I learned that a build tool like Webpack
+was necessary in order to manage the assets. Webpack bundles up all modules into a single JavaScript
+asset to be represented for production and works through a configuration file that acts as a graph for
+dependencies.
+
+<br />
+
+Due to Webpack's open-ended ecosystem, configuring it was complicated. Beginners can get inundated with
+all the loaders and plugins - https://webpack.js.org/awesome-webpack/ - available to use during the bundling
+process. However, Webpack is a commonly used technology with good documentation and resources. By utilizing
+those resources, I successfully set up and configured this project.

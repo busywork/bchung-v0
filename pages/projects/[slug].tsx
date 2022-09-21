@@ -1,11 +1,14 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getMDXComponent } from 'mdx-bundler/client';
+import { FiExternalLink } from 'react-icons/fi';
+import { SiGithub } from 'react-icons/si';
 
 import CloudinaryImage from '../../components/CloudinaryImage';
 import Heading from '../../components/Heading';
 import MDXComponents from '../../components/MDXComponents';
 import TableOfContents from '../../components/TableOfContents';
+import UnstyledLink from '../../components/UnstyledLink';
 
 import { getFiles, getFileData } from '../../utils/mdx';
 import { ProjectType } from '../../types/frontmatter';
@@ -17,9 +20,27 @@ const Project = ({ code, frontmatter }: ProjectType) => {
     <section id={frontmatter.title} className="flex flex-col">
       <div>
         <CloudinaryImage height="800" width="1280" publicId={frontmatter.banner} alt="" />
-        <Heading as={'h1'} className="text-2xl mt-4">
-          {frontmatter.title}
-        </Heading>
+        <div className="flex">
+          <Heading as={'h1'} className="text-2xl mt-4">
+            {frontmatter.title}
+          </Heading>
+          <div className="flex items-center mt-4">
+            {frontmatter.github && (
+              <span className="mx-2">
+                <UnstyledLink href={frontmatter.github} openNew={true}>
+                  <SiGithub />
+                </UnstyledLink>
+              </span>
+            )}
+            {frontmatter.link && (
+              <span className="mx-2">
+                <UnstyledLink href={frontmatter.link} openNew={true}>
+                  <FiExternalLink />
+                </UnstyledLink>
+              </span>
+            )}
+          </div>
+        </div>
         <p className="text-black dark:text-white mb-4">{frontmatter.description}</p>
       </div>
 

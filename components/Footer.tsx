@@ -32,7 +32,7 @@ const Footer = () => {
     <footer className="flex flex-col justify-center items-center p-4">
       <div className="flex flex-row justify-center items-center text-xl pb-2 border-b">
         {socialList.map(social => (
-          <UnstyledLink key={social.name} href={social.href}>
+          <UnstyledLink key={social.name} href={social.href} openNew={true}>
             <social.icon className="mx-4" />
           </UnstyledLink>
         ))}
@@ -40,15 +40,13 @@ const Footer = () => {
       <div className="flex flex-row justify-center items-center">
         <span className="mx-4">{gitStats.stargazers_count}</span>
         <GoStar />
-        <GoOctoface className="mx-4" />
+        <UnstyledLink href={'https://github.com/busywork/bchung-v0'} openNew={true}>
+          <GoOctoface className="mx-4" />
+        </UnstyledLink>
         <GoRepoForked />
         <span className="mx-4">{gitStats.forks_count}</span>
       </div>
-      <div>
-        <UnstyledLink href={'https://api.github.com/repos/busywork/bchung-v0'}>
-          &copy; {new Date().getFullYear()} BRIAN CHUNG
-        </UnstyledLink>
-      </div>
+      <div>&copy; {new Date().getFullYear()} BRIAN CHUNG</div>
     </footer>
   );
 };
@@ -59,16 +57,16 @@ const socialList = [
   {
     name: 'GitHub',
     icon: SiGithub,
-    href: 'https://github.com',
+    href: 'https://github.com/busywork',
   },
   {
     name: 'LinkedIn',
     icon: SiLinkedin,
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/brichung',
   },
   {
     name: 'Twitter',
     icon: SiTwitter,
-    href: 'https://twitter.com',
+    href: 'https://twitter.com/bsywrk',
   },
 ];
