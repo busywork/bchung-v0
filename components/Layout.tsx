@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Meta from '../components/Meta';
-import Header from '../components/Header';
+import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 interface LayoutProps {
@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Meta />
       <div>
-        <Header />
+        <Nav />
         <main className="container flex flex-col justify-center items-center p-4 mx-auto max-w-6xl">
           {children}
         </main>

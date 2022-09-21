@@ -11,6 +11,7 @@ const Toggle = ({ checked, onChange }: ToggleProps): JSX.Element => (
     <input
       className={styles.check}
       type="checkbox"
+      aria-label="Toggle"
       checked={checked}
       onChange={onChange}
       id="check"

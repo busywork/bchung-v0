@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
 
   return (
     <div className={styles['dark-mode-toggle']}>
-      <button type="button" onClick={disable}>
+      <button type="button" aria-label="Light" onClick={disable}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -31,7 +31,7 @@ const DarkModeToggle = () => {
         </svg>
       </button>
       <Toggle checked={isDarkMode} onChange={toggle} />
-      <button type="button" onClick={enable}>
+      <button type="button" aria-label="Dark" onClick={enable}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-6"
