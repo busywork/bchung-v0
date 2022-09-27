@@ -2,7 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 
 import styles from '../styles/DarkModeToggle.module.css';
-import useDarkMode from '../utils/useDarkMode';
+import useDarkMode from '../hooks/useDarkMode';
 import Toggle from './Toggle';
 
 const DarkModeToggle = () => {
