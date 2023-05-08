@@ -16,6 +16,7 @@ export type ProjectFrontmatter = {
 
 export type ProjectType = {
   code: string;
+  slug: string;
   frontmatter: ProjectFrontmatter;
 };
 
