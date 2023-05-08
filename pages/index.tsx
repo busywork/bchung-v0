@@ -11,7 +11,11 @@ import { getAllFrontmatter, getFeaturedFrontmatter } from '../utils/mdx';
 const Home = ({ projectsData, snippetsData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <SEO title={siteMetadata.title} description={siteMetadata.description} />
+      <SEO
+        title={siteMetadata.title}
+        description={siteMetadata.description}
+        siteURL={siteMetadata.siteURL}
+      />
       <Hero />
       <Projects projects={projectsData} />
       <Snippets snippets={snippetsData} />

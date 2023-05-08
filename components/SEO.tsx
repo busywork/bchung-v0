@@ -1,18 +1,13 @@
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 type SEOProps = {
   title: string;
   description: string;
+  siteURL: string;
 };
 
-const SEO = ({ title, description }: SEOProps) => {
-  return (
-    <Head>
-      <title>{title}</title>
-      <meta name="robots" content="follow, index" />
-      <meta name="description" content={description} />
-    </Head>
-  );
+const SEO = ({ title, description, siteURL }: SEOProps) => {
+  return <NextSeo title={title} description={description} canonical={siteURL} />;
 };
 
 export default SEO;

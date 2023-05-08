@@ -15,7 +15,7 @@ import siteMetadata from '../../contents/siteMetadata';
 import { getFiles, getFileData } from '../../utils/mdx';
 import { ProjectType } from '../../types/frontmatter';
 
-const Project = ({ code, frontmatter }: ProjectType) => {
+const Project = ({ code, slug, frontmatter }: ProjectType) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
@@ -23,6 +23,7 @@ const Project = ({ code, frontmatter }: ProjectType) => {
       <SEO
         title={`${siteMetadata.title} : ${frontmatter.title}`}
         description={frontmatter.description}
+        siteURL={`${siteMetadata.siteURL}/projects/${slug}`}
       />
       <section id={frontmatter.title} className="flex flex-col">
         <div>
@@ -74,7 +75,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   const projects = getFiles('projects');
 
   return {
-    paths: projects.map(project => ({
+    paths: projects.map((project) => ({
       params: {
         // remove file extensions
         slug: project.replace(/\.mdx/, ''),
@@ -88,6 +89,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const data = await getFileData('projects', params?.slug as string);
 
   return {
-    props: { ...data },
+    props: { slug: params?.slug, ...data },
   };
 };
