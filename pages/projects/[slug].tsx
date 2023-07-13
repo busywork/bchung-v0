@@ -21,7 +21,7 @@ const Project = ({ code, slug, frontmatter }: ProjectType) => {
   return (
     <>
       <SEO
-        title={`${siteMetadata.title} : ${frontmatter.title}`}
+        title={`${frontmatter.title}`}
         description={frontmatter.description}
         siteURL={`${siteMetadata.siteURL}/projects/${slug}`}
       />
