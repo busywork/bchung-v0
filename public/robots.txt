@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://bchung.dev
+
+# Sitemaps
+Sitemap: https://bchung.dev/sitemap.xml
