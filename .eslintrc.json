@@ -6,6 +6,10 @@
     "node": true
   },
   "settings": {
+    // to support @/ path
+    "import/resolver": {
+      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+    },
     "react": {
       "version": "detect"
     }
@@ -28,6 +32,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking", // contains rules that specifically require type information
     "plugin:@next/next/recommended",
